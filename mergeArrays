@@ -1,0 +1,24 @@
+// MERGE ARRAYS:
+// write a function to combine the sorted arrays into sorted Result Array.
+// Example:
+// function mergeArrays(ArrayA, ArrayB) {
+//     // Write your code 
+//       return ..[]; // name it whatever you like, result must be an array
+//   }
+//   // The arrays include numbers. You can write additional helper functions as well.
+
+
+// ANSWER:
+
+let ArrayA, ArrayB;
+
+function mergeArrays(ArrayA, ArrayB) {
+    let ArraySorted = ArrayA.concat(ArrayB)
+    ArraySorted = ArraySorted.sort(function(a,b){return a-b})
+    return ArraySorted
+}
+
+ArrayA = [10,2,14];
+ArrayB = [10001,3,56];
+
+console.log(mergeArrays(ArrayA, ArrayB))
