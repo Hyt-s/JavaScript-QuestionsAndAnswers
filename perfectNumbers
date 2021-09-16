@@ -3,3 +3,36 @@
 // For instance, 6 has divisors 1, 2 and 3, and 1 + 2 + 3 = 6, so 6 is a perfect number.
 // Write js code block that give "It is a perfect number" or "It is not a perfect number" depends on Perfect Number Theory.
 
+// 1. ANSWER:
+
+const input = Number(prompt("enter a positive number to check whether it is a perfect number"))
+const isPerfect = (numb) => {
+    let sum = 0
+    for( let i = 1; i <= numb/2; i++ ) {
+             if (!(numb % i)) sum += i 
+         }
+    
+    sum == numb && sum !== 0
+        ? console.log(`number => ${numb}, sum of its divisors => ${sum} ==> PERFECT NUMBER`) 
+        : console.log(`number => ${numb}, sum of its divisors => ${sum} ==> NOT PERFECT NUMBER`)
+}
+isPerfect(input);
+
+
+// 2. ANSWER:
+
+const is_perfect = (number) => {
+    var total = 0;
+    for(var i=1;i<=number/2;i++) {
+        if(number%i === 0) {
+            total += i;
+        }
+    }
+    
+    if(total === number && total !== 0) {
+        console.log("It is a perfect number.");
+    } else { 
+        console.log("It is not a perfect number.");
+    }
+}
+is_perfect(6);
