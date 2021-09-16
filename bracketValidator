@@ -1,0 +1,60 @@
+// BRACKET VALIDATOR:
+// Let's say:
+    // '(', '{', '[' are called "openers."
+    // ')', '}', ']' are called "closers."
+// Write an efficient function that tells us whether or not an input string's openers and closers are properly nested.
+// Examples:
+    // "{ [ ] ( ) }" should return true
+    // "{ [ ( ] ) }" should return false
+    // "{ [ }" should return false
+
+
+// 1. ANSWER: 
+
+function isValid(str) {
+    while (true) {
+        if (str.includes("()") || str.includes("[]") || str.includes("{}")) {
+            str = str.split("()").join("");
+            str = str.split("[]").join("");
+            str = str.split("{}").join("");
+        } else if (str === "") {
+            console.log(true);
+            break;
+        } else {
+            console.log(false);
+            break;
+        }
+
+    }
+}
+
+isValid("{[]()}");  // output true
+isValid("{[(])}");  // output false
+
+
+// 2. ANSWER: 
+    //Firstly, we filter out characters that are not of type parentheses.
+    //Then only the parantheses remain and we operate on it.
+
+function isValid (str) {
+    brackets = ["{", "}", "[", "]", "(", ")"];
+    str = str.split("").filter(i => brackets.includes(i)).join("");
+    // console.log("str: ", str);
+
+    while (true) {
+        if (str.includes("()") || str.includes("[]") || str.includes("{}")) {
+            str = str.split("()").join("");
+            str = str.split("[]").join("");
+            str = str.split("{}").join("");
+        } else if (str === "") {
+            console.log(true);
+            break;
+        } else {
+            console.log(false);
+            break
+        }
+    }
+}
+
+isValid("{[( )]} [ae] (..) {{(    )}}")  //output true
+isValid("[(a)]([bc)]")  //output false
