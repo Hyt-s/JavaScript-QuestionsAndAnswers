@@ -1,0 +1,44 @@
+// SLIDING WINDOW MAXIMUM
+// This is an interview question asked by Google.
+// Given an array of integers and a number k, where 1 <= k <= length of the array, compute the maximum values of each subarray of length k.
+// For example:
+    // given array = [10, 5, 2, 7, 8, 7] and k = 3, we should get: [10, 7, 8, 8],
+    // since:
+    // 10 = max(10, 5, 2)
+    // 7 = max(5, 2, 7)
+    // 8 = max(2, 7, 8)
+    // 8 = max(7, 8, 7)
+
+
+// 1. ANSWER:
+
+let arr = [10, 5, 2, 7, 8, 7];
+let k = 3;
+
+let n1 = 0;
+let n2 = 0+k;
+output = [];
+
+while (n2<=arr.length) {
+    output.push(Math.max(...arr.slice(n1, n2)));
+    n1++;
+    n2++;
+}
+
+console.log("output: ", output); 
+
+
+// 2. ANSWER:
+
+const array = [1,3,-1,-3,5,3,6,7];
+const k = 3;
+const newarray = [];
+
+const func = () => {
+    if (array.length < k) return;
+    newarray.push(Math.max(...array.slice(0,k)));
+    array.shift();
+    func();
+}
+func();
+console.log(newarray);
