@@ -26,3 +26,4 @@ function reverse2(text) {
 }
 console.log(reverse2('Clarusway Rocks!'))  // output: !skcoR yawsuralC
 console.log(reverse2('Happy'))  // output: yppaH
+
