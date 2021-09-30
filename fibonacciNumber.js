@@ -49,3 +49,4 @@ function fibonacci3(n) {
 console.log(fibonacci3(3))  // output: 3
 console.log(fibonacci3(7))  // output: 21
 console.log(fibonacci3(12))  // output: 233
+
